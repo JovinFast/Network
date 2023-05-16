@@ -7,15 +7,17 @@ using System.Runtime.CompilerServices;
 
 public class Health : AttributesSync
 {
-    [SynchronizableField] public int health = 10;
+    [SerializeField]List<Transform> respawnPoints = new List<Transform>();
     public float playerHealth;
     [SynchronizableField] public float currentHealth;
-
+    Shoot shootScript;
     private Alteruna.Avatar avatar;
 
 
     private void Awake()
     {
+        
+        shootScript = GetComponent<Shoot>();
         avatar = GetComponent<Alteruna.Avatar>();
     }
 
@@ -26,6 +28,7 @@ public class Health : AttributesSync
         {
             enabled = false;
         }
+        CollectObjectsWithTag();
         currentHealth = playerHealth;
     }
 
@@ -52,9 +55,40 @@ public class Health : AttributesSync
         if(currentHealth <= 0)
         {
             Debug.Log("Player died");
-            Destroy(avatar);
-            Destroy(transform.gameObject);
+            Respawn();
         }
 
+    }
+
+
+    private void Respawn()
+    {
+        SetNewPosition();
+        ResetHealth();
+        ResetFireRate();
+    }
+
+    private void ResetHealth()
+    {
+        currentHealth = 100;
+    }
+    private void ResetFireRate()
+    {
+        shootScript.ResetFireRate();
+    }
+    private void SetNewPosition()
+    {
+
+        int respawnIndex = Random.Range(0, respawnPoints.Count - 1);
+        transform.position = respawnPoints[respawnIndex].position;
+    }
+    private void CollectObjectsWithTag()
+    {
+        GameObject[] objects = GameObject.FindGameObjectsWithTag("RespawnPoint");
+
+        foreach (GameObject obj in objects)
+        {
+           respawnPoints.Add(obj.transform);
+        }
     }
 }

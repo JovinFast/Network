@@ -5,7 +5,7 @@ using Alteruna;
 
 public class HealthPickUp : AttributesSync
 {
-    int healthAmount = 1;
+    int healthAmount = 10;
    
     [SerializeField] AudioClip healthSound;
 
@@ -19,13 +19,13 @@ public class HealthPickUp : AttributesSync
                 if (other.GetComponent<Alteruna.Avatar>().IsMe)
                 {
                     AudioSource.PlayClipAtPoint(healthSound,transform.position);
-                    if(other.GetComponent<Health>().currentHealth < 10)
+                    if(other.GetComponent<Health>().currentHealth < 100)
                     {
                         other.GetComponent<Health>().currentHealth += healthAmount;
                     }
-                    else if (other.GetComponent<Health>().currentHealth > 10)
+                    else if (other.GetComponent<Health>().currentHealth > 100)
                     {
-                        other.GetComponent<Health>().currentHealth = 10;
+                        other.GetComponent<Health>().currentHealth = 100;
                     }
                 }
             }

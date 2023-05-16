@@ -47,4 +47,10 @@ public class Shoot : MonoBehaviour
             reloadSpeedStart -= 0.3f;
         }
     }
+
+    public void ResetFireRate()
+    {
+        reloadSpeedStart = 2;
+        reloadSpeed = 2;
+    }
 }
