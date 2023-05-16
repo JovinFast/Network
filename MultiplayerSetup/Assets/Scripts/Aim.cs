@@ -9,7 +9,7 @@ public class Aim : MonoBehaviour
     private Camera mainCam;
     private Alteruna.Avatar avatar;
 
-    Vector3 newDirection;
+    public Vector3 newDirection;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,25 @@ public class Aim : MonoBehaviour
     {
         if (!avatar.IsMe)
             return;
-        MouseAim();
+
+        //Get the Screen positions of the object
+        Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
+
+        //Get the Screen position of the mouse
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        //Get the angle between the points
+        float angle = AngleBetweenTwoPoints(positionOnScreen, mouseWorldPosition);
+
+        //Ta Daaa
+        transform.rotation = Quaternion.LookRotation(new Vector3(0f, 0, angle));
+    }
+
+    float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
+    {
+        return Mathf.Atan2(a.y - b.y, a.x - b.x);
+        //return Mathf.Atan(a.x - b.x) * Mathf.Rad2Deg;
+        //MouseAim();
     }
 
     private void MouseAim()
