@@ -7,15 +7,22 @@ public class FieldOfView : MonoBehaviour
 {
     Alteruna.Avatar avatar;
 
+
+    private void Awake()
+    {
+        avatar = GetComponent<Alteruna.Avatar>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+
         if (!avatar.IsMe)
         {
             enabled = false;
             return;
         }
-        avatar = GetComponent<Alteruna.Avatar>();
+        
         if(avatar.IsMe)
         {
             GetComponentInChildren<MeshRenderer>().enabled = true;
