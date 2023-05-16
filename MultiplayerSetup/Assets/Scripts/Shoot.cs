@@ -34,7 +34,7 @@ public class Shoot : MonoBehaviour
         if (reloadSpeed > 0) return; 
         if(Input.GetMouseButtonDown(0)) 
         {
-            spawner.Spawn(0, pivotPoint.transform.position, pivotPoint.transform.rotation);
+            spawner.Spawn(1, pivotPoint.transform.position, pivotPoint.transform.rotation);
             reloadSpeed = reloadSpeedStart;
             //Instantiate(bulletPrefab, pivotPoint.transform.position, pivotPoint.transform.rotation);
         }
