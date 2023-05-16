@@ -44,7 +44,7 @@ public class Aim : MonoBehaviour
         }
         //Vector3 newDirection = transform.position - mousePosition;
         Debug.DrawRay(transform.position, newDirection, Color.green);
-        Debug.Log(newDirection.magnitude);
+        //Debug.Log(newDirection.magnitude);
         if (newDirection.magnitude > 1)
             transform.rotation = Quaternion.LookRotation(newDirection, Vector3.up);
     }

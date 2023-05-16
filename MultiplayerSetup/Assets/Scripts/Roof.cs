@@ -26,7 +26,7 @@ public class Roof : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            Debug.Log("finding player");
+            //Debug.Log("finding player");
             if (other.GetComponent<Alteruna.Avatar>().IsMe)
             {
                 Debug.Log(other.gameObject.name);
