@@ -30,15 +30,12 @@ public class FieldOfView : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.name);
+        if (!avatar.IsMe) return;
+            Debug.Log(other.gameObject.name);
         if(other.CompareTag("Player"))
         {
             Debug.Log("Finding playermesh");
@@ -53,7 +50,8 @@ public class FieldOfView : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (!avatar.IsMe) return;
+            if (other.CompareTag("Player"))
         {
             if(!other.GetComponent<Alteruna.Avatar>().IsMe)
             {
