@@ -173,6 +173,7 @@ MonoBehaviour:
   pivotPoint: {fileID: 8698758950629873345}
   bulletPrefab: {fileID: 6740034599695580548, guid: 70f771ee17fded640b10e82e27cbbca9, type: 3}
   avatar: {fileID: 0}
+  decreaseAmount: 1
 --- !u!114 &-2665976959460098858
 MonoBehaviour:
   m_ObjectHideFlags: 0
