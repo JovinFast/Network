@@ -14,22 +14,28 @@ public class Shoot : MonoBehaviour
     
     private float reloadSpeed = 2;
     public float reloadSpeedStart;
-    
 
+    private void Awake()
+    {
+        spawner = GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<Spawner>();
+        avatar = GetComponent<Alteruna.Avatar>();
+        reloadSpeedStart = reloadSpeed;
+        reloadSpeed = 0;
+    }
     // Start is called before the first frame update
     void Start()
     {
-        spawner = GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<Spawner>();
-        avatar= GetComponent<Alteruna.Avatar>();
-        reloadSpeedStart = reloadSpeed;
-        reloadSpeed = 0;
+        
+        if (!avatar.IsMe)
+        {
+            enabled = false;
+            return;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!avatar.IsMe)
-            return;
         reloadSpeed -=  decreaseAmount * Time.deltaTime;
         if (reloadSpeed > 0) return; 
         if(Input.GetMouseButtonDown(0)) 

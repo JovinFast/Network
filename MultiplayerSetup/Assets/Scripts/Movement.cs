@@ -31,6 +31,7 @@ public class Movement : MonoBehaviour
         if(!avatar.IsMe)
         {
             enabled = false;
+            return;
         }
 
         //Camera.main.transform.SetParent(transform);

@@ -11,16 +11,19 @@ public class Aim : MonoBehaviour
 
     public Vector3 newDirection;
 
+    private void Awake()
+    {
+        avatar = GetComponent<Alteruna.Avatar>();
+        mainCam = Camera.main;
+    }
     // Start is called before the first frame update
     void Start()
     {
-        mainCam = Camera.main;
-        avatar = GetComponent<Alteruna.Avatar>();
         if (!avatar.IsMe)
         {
             enabled = false;
             return;
-        }
+        } 
     }
 
     // Update is called once per frame
