@@ -17,15 +17,20 @@ public class Roof : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
+
+      
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            Debug.Log(other.gameObject.name);
-            roofMesh.enabled = false;
+            if (other.TryGetComponent(out Alteruna.Avatar _avatar) && _avatar.IsMe)
+            {
+                Debug.Log(other.gameObject.name);
+                roofMesh.enabled = false;
+            }
         }
     }
 
@@ -33,7 +38,10 @@ public class Roof : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            roofMesh.enabled = true;
+            if (other.TryGetComponent(out Alteruna.Avatar _avatar) && _avatar.IsMe)
+            {
+                roofMesh.enabled = true;
+            }
         }
     }
 }
