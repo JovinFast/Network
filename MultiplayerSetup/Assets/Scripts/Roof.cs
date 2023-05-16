@@ -24,6 +24,7 @@ public class Roof : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
+            Debug.Log(other.gameObject.name);
             roofMesh.enabled = false;
         }
     }
