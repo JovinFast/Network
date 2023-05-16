@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3713200747037301092}
   m_Layer: 0
   m_Name: DestructableWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,7 +129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallPartsPrefab: {fileID: 7457537544607900867, guid: 7caa73f914781cc4698683f5f6c2e6d1, type: 3}
-  health: 50
+  roof: {fileID: 0}
+  health: 2
   currentHealth: 0
   isDestroyed: 0
 --- !u!114 &3713200747037301092
