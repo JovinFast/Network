@@ -12,11 +12,15 @@ public class Health : AttributesSync
     [SynchronizableField] public float currentHealth;
     Shoot shootScript;
     private Alteruna.Avatar avatar;
+    [SerializeField]GameObject[] PowerUps;
+     private Spawner spawner;
+
+    
 
 
     private void Awake()
     {
-        
+        spawner = GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<Spawner>();
         shootScript = GetComponent<Shoot>();
         avatar = GetComponent<Alteruna.Avatar>();
     }
@@ -32,19 +36,6 @@ public class Health : AttributesSync
         currentHealth = playerHealth;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-
-    }
-
-    [SynchronizableMethod]
-    private void TestMethod(string myString)
-    {
-        Debug.Log(myString);
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.CompareTag("Bullet"))
@@ -55,12 +46,18 @@ public class Health : AttributesSync
         if(currentHealth <= 0)
         {
             Debug.Log("Player died");
+            Invoke("SpawnPowerUp", 2f);
             Respawn();
         }
 
     }
 
-
+    private void SpawnPowerUp()
+    {
+        int randomIndex = Random.Range(2, 4);
+        spawner.Spawn(randomIndex, transform.position, transform.rotation);
+        
+    }
     private void Respawn()
     {
         SetNewPosition();
