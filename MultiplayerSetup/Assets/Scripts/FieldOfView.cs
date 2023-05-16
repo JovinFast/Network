@@ -42,14 +42,12 @@ public class FieldOfView : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             Debug.Log("Finding playermesh");
-            if (other.GetComponent<Alteruna.Avatar>().IsMe)
+            if (!other.GetComponent<Alteruna.Avatar>().IsMe)
             {
-                Debug.Log("checks if me");
-                return;
+                other.GetComponentInChildren<MeshRenderer>().enabled = true;
+                other.GetComponentInChildren<Light>().enabled = true;
             }
 
-            other.GetComponentInChildren<MeshRenderer>().enabled = true;
-            other.GetComponentInChildren<Light>().enabled = true;
         }
     }
 
@@ -57,12 +55,12 @@ public class FieldOfView : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            if(other.GetComponent<Alteruna.Avatar>().IsMe)
+            if(!other.GetComponent<Alteruna.Avatar>().IsMe)
             {
-                return;
+                other.GetComponentInChildren<MeshRenderer>().enabled = false;
+                other.GetComponentInChildren<Light>().enabled = false;
             }
-            other.GetComponentInChildren<MeshRenderer>().enabled = false;
-            other.GetComponentInChildren<Light>().enabled = false;
         }
+            
     }
 }
