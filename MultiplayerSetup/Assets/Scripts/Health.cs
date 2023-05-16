@@ -14,6 +14,7 @@ public class Health : AttributesSync
     private Alteruna.Avatar avatar;
     [SerializeField]GameObject[] PowerUps;
      private Spawner spawner;
+    Vector3 deathLocation;
 
     
 
@@ -45,8 +46,9 @@ public class Health : AttributesSync
 
         if(currentHealth <= 0)
         {
+            deathLocation = transform.position;
             Debug.Log("Player died");
-            Invoke("SpawnPowerUp", 2f);
+            Invoke("SpawnPowerUp", 0.1f);
             Respawn();
         }
 
@@ -55,7 +57,7 @@ public class Health : AttributesSync
     private void SpawnPowerUp()
     {
         int randomIndex = Random.Range(2, 4);
-        spawner.Spawn(randomIndex, transform.position, transform.rotation);
+        spawner.Spawn(randomIndex, deathLocation, transform.rotation);
         
     }
     private void Respawn()
