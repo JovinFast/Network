@@ -6,6 +6,9 @@ using Alteruna;
 public class HealthPickUp : AttributesSync
 {
     int healthAmount = 1;
+   
+    [SerializeField] AudioClip healthSound;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,6 +18,7 @@ public class HealthPickUp : AttributesSync
             {
                 if (other.GetComponent<Alteruna.Avatar>().IsMe)
                 {
+                    AudioSource.PlayClipAtPoint(healthSound,transform.position);
                     if(other.GetComponent<Health>().currentHealth < 10)
                     {
                         other.GetComponent<Health>().currentHealth += healthAmount;

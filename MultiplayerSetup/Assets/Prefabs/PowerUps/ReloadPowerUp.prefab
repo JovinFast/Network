@@ -114,3 +114,4 @@ MonoBehaviour:
   _uidString: b119a22b-fd1f-4a70-901d-8a58ff46c605
   Reliability: 1
   LocalMethodBehavior: 1
+  fireRateSound: {fileID: 8300000, guid: bd9f54266ad8ef9498dc3248335a8fef, type: 3}
