@@ -9,7 +9,7 @@ public class Health : AttributesSync
 {
     [SynchronizableField] public int health = 10;
     public float playerHealth;
-    public float currentHealth;
+    [SynchronizableField] public float currentHealth;
 
     private Alteruna.Avatar avatar;
 
