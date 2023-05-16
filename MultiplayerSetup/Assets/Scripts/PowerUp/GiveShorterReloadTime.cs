@@ -10,10 +10,10 @@ public class GiveShorterReloadTime : AttributesSync
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
-            avatar = other.gameObject.GetComponent<Alteruna.Avatar>();
-            if (avatar.IsMe)
+        {         
+            if (other.TryGetComponent(out Alteruna.Avatar _avatar) && _avatar.IsMe)
             {
+                Debug.Log("pickUp");
                 other.gameObject.GetComponent<Shoot>().DecreaseReloadSpeed();
             }
             InvokeRemoteMethod(nameof(DestroyPowerUp), UserId.AllInclusive);
