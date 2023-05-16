@@ -30,7 +30,7 @@ public class CameraFollow : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation, camTarget.rotation, rLerp);
     }
 
-    void ApplyCamera(GameObject player)
+    public void ApplyCamera(GameObject player)
     {
         camTarget = player.transform;
     }
