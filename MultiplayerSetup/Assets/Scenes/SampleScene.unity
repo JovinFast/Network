@@ -1888,7 +1888,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e519c399c829024c8149c6b59197837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camTarget: {fileID: 0}
+  camTarget: {fileID: 190127113254168461, guid: bba5560efeebbad4b8848834ba8d7724, type: 3}
+  pLerp: 0.1
+  rLerp: 0.05
 --- !u!1001 &1076547380
 PrefabInstance:
   m_ObjectHideFlags: 0

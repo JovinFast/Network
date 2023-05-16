@@ -6,15 +6,15 @@ public class CameraFollow : MonoBehaviour
 {
     public Transform camTarget;
 
-    private float pLerp = 0.02f;
-    private float rLerp = 0.01f;
+    public float pLerp = 0.01f;
+    public float rLerp = 0.01f;
     // Start is called before the first frame update
     private void Start()
     {
 
     }
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //if (camTarget != null)
         //{
