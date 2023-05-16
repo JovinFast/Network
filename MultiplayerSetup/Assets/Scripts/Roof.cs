@@ -24,9 +24,10 @@ public class Roof : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if(other.CompareTag("Player"))
         {
-            if (other.TryGetComponent(out Alteruna.Avatar _avatar) && _avatar.IsMe)
+            Debug.Log("finding player");
+            if (other.GetComponent<Alteruna.Avatar>().IsMe)
             {
                 Debug.Log(other.gameObject.name);
                 roofMesh.enabled = false;
@@ -36,9 +37,9 @@ public class Roof : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if(other.CompareTag("Player"))
         {
-            if (other.TryGetComponent(out Alteruna.Avatar _avatar) && _avatar.IsMe)
+            if (other.TryGetComponent(out Alteruna.Avatar avatar) && avatar.IsMe)
             {
                 roofMesh.enabled = true;
             }
