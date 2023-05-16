@@ -39,7 +39,8 @@ public class Health : AttributesSync
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Bullet"))
+        if (!avatar.IsMe) return;
+            if (collision.gameObject.CompareTag("Bullet"))
         {
             currentHealth -= collision.gameObject.GetComponent<Bullet>().damage;
         }
