@@ -16,16 +16,16 @@ public class Aim : MonoBehaviour
     {
         mainCam = Camera.main;
         avatar = GetComponent<Alteruna.Avatar>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         if (!avatar.IsMe)
         {
             enabled = false;
             return;
         }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         MouseAim();
     }
     private void MouseAim()
