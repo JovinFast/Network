@@ -23,27 +23,8 @@ public class Aim : MonoBehaviour
     {
         if (!avatar.IsMe)
             return;
-
-        //Get the Screen positions of the object
-        Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
-
-        //Get the Screen position of the mouse
-        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        //Get the angle between the points
-        float angle = AngleBetweenTwoPoints(positionOnScreen, mouseWorldPosition);
-
-        //Ta Daaa
-        transform.rotation = Quaternion.LookRotation(new Vector3(0f, 0, angle));
+        MouseAim();
     }
-
-    float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
-    {
-        return Mathf.Atan2(a.y - b.y, a.x - b.x);
-        //return Mathf.Atan(a.x - b.x) * Mathf.Rad2Deg;
-        //MouseAim();
-    }
-
     private void MouseAim()
     {
         
@@ -56,8 +37,9 @@ public class Aim : MonoBehaviour
         }
         //Vector3 newDirection = transform.position - mousePosition;
         Debug.DrawRay(transform.position, newDirection, Color.green);
-
-        transform.rotation = Quaternion.LookRotation(newDirection, Vector3.up);
+        Debug.Log(newDirection.magnitude);
+        if (newDirection.magnitude > 1)
+            transform.rotation = Quaternion.LookRotation(newDirection, Vector3.up);
     }
 
     
