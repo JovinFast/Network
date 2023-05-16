@@ -46,12 +46,15 @@ public class Health : AttributesSync
 
         if(currentHealth <= 0)
         {
-            deathLocation = transform.position;
-            Debug.Log("Player died");
-            Invoke("SpawnPowerUp", 0.1f);
-            Respawn();
+            if (avatar.IsMe)
+            {
+             deathLocation = transform.position;
+             Debug.Log("Player died");
+             Invoke("SpawnPowerUp", 0.1f);
+             Respawn();
+                
+            }
         }
-
     }
 
     private void SpawnPowerUp()
