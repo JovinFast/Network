@@ -22,7 +22,10 @@ public class Aim : MonoBehaviour
     void Update()
     {
         if (!avatar.IsMe)
+        {
+            enabled = false;
             return;
+        }
         MouseAim();
     }
     private void MouseAim()
