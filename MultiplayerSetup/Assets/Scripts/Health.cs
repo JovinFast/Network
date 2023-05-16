@@ -79,7 +79,7 @@ public class Health : AttributesSync
     private void SetNewPosition()
     {
 
-        int respawnIndex = Random.Range(0, respawnPoints.Count - 1);
+        int respawnIndex = Random.Range(0, respawnPoints.Count);
         transform.position = respawnPoints[respawnIndex].position;
     }
     private void CollectObjectsWithTag()
