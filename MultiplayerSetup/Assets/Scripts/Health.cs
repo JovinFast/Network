@@ -32,15 +32,8 @@ public class Health : AttributesSync
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E)) {
 
-            health -= 1;
-        }
 
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            InvokeRemoteMethod(nameof(TestMethod), UserId.AllInclusive, "It got shown"); //0 for first one in the list
-        }
     }
 
     [SynchronizableMethod]
