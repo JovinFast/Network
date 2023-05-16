@@ -4824,9 +4824,21 @@ PrefabInstance:
       propertyPath: Multiplayer
       value: 
       objectReference: {fileID: 1336096397}
+    - target: {fileID: 107421827, guid: e3ea2c591ec599c4ba4b7047743099a4, type: 3}
+      propertyPath: SyncEveryNUpdates
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 107421827, guid: e3ea2c591ec599c4ba4b7047743099a4, type: 3}
+      propertyPath: FullSyncEveryNSync
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5376244498220299792, guid: e3ea2c591ec599c4ba4b7047743099a4, type: 3}
       propertyPath: m_Name
       value: ZombieParent
+      objectReference: {fileID: 0}
+    - target: {fileID: 5376244498220299797, guid: e3ea2c591ec599c4ba4b7047743099a4, type: 3}
+      propertyPath: m_Mass
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5376244498220299799, guid: e3ea2c591ec599c4ba4b7047743099a4, type: 3}
       propertyPath: m_RootOrder
