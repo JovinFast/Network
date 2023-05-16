@@ -1,6 +1,6 @@
 using UnityEngine;
 using Alteruna;
-public class ZombieController : MonoBehaviour
+public class ZombieController : AttributesSync
 {
     public float movementSpeed = 3f; // Speed at which the zombie moves towards the player
     public float detectionRange = 10f; // Range at which the zombie detects the player
@@ -22,14 +22,13 @@ public class ZombieController : MonoBehaviour
     {
         if (isPursuing && targetPlayer != null)
         {
-            MoveTowardsPlayer();
+            InvokeRemoteMethod(nameof(MoveTowardsPlayer), UserId.AllInclusive);
         }
     }
-
+    [SynchronizableMethod]
     private void MoveTowardsPlayer()
     {
-        if (avatar.IsMe)
-        {
+        
             // Calculate the direction towards the player
             Vector3 direction = targetPlayer.transform.position - transform.position;
             direction.y = 0; // Ignore vertical movement
@@ -43,7 +42,7 @@ public class ZombieController : MonoBehaviour
             // Rotate the zombie to face the player
             transform.rotation = Quaternion.LookRotation(direction);
 
-        }
+        
     }
 
     private void OnTriggerEnter(Collider other)
