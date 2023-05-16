@@ -14,7 +14,6 @@ public class Aim : MonoBehaviour
     private void Awake()
     {
         avatar = GetComponent<Alteruna.Avatar>();
-        mainCam = Camera.main;
     }
     // Start is called before the first frame update
     void Start()
@@ -24,12 +23,14 @@ public class Aim : MonoBehaviour
             enabled = false;
             return;
         } 
+        mainCam = Camera.main;
     }
 
     // Update is called once per frame
     void Update()
     {
-        MouseAim();
+        if (!avatar.IsMe) return;
+            MouseAim();
     }
     private void MouseAim()
     {
