@@ -21,18 +21,6 @@ public class SetCamera : MonoBehaviour
             enabled = false;
             return;
         }
-        CollectObjectsWithTag();
-    }
-    private void CollectObjectsWithTag()
-    {
-        GameObject[] objects = GameObject.FindGameObjectsWithTag("Player");
-
-        foreach (GameObject obj in objects)
-        {
-            if (obj.GetComponent<Alteruna.Avatar>().IsMe)
-            {
-                cameraFollowScript.ApplyCamera(camFollow);
-            }
-        }
+        cameraFollowScript.ApplyCamera(camFollow);
     }
 }
