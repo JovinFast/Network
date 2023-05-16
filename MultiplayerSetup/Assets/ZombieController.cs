@@ -10,12 +10,13 @@ public class ZombieController : AttributesSync
     private bool isPlayerInRange = false; // Flag to track if a player is in range
     private bool isPursuing = false; // Flag to track if the zombie is actively pursuing a target
     private RigidbodySynchronizable zombieRigidbody; // Reference to the zombie's rigidbody
-
+    AudioSource aS;
     private Alteruna.Avatar avatar;
 
     private void Awake()
     {
         zombieRigidbody = GetComponent<RigidbodySynchronizable>();
+        aS = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -58,6 +59,7 @@ public class ZombieController : AttributesSync
 
             if (targetPlayer == null || distanceToPlayer < Vector3.Distance(transform.position, targetPlayer.transform.position))
             {
+                if (avatar.IsMe) aS.Play();
                 targetPlayer = playerTransform;
                 isPursuing = true; // Start pursuing the target
             }
@@ -66,7 +68,7 @@ public class ZombieController : AttributesSync
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") && targetPlayer == other.transform)
+        if (other.CompareTag("Player") && targetPlayer == other.transform.gameObject)
         {
             isPlayerInRange = false;
             isPursuing = false; // Stop pursuing the target

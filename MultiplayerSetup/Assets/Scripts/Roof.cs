@@ -7,20 +7,15 @@ using UnityEngine;
 public class Roof : MonoBehaviour
 {
     private MeshRenderer roofMesh;
+    TurnOnOffWindSound windSound;
 
     // Start is called before the first frame update
     void Start()
     {
-        roofMesh= GetComponent<MeshRenderer>();
+        windSound = FindObjectOfType<TurnOnOffWindSound>();
+        roofMesh = GetComponent<MeshRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-      
 
     private void OnTriggerEnter(Collider other)
     {
@@ -29,6 +24,7 @@ public class Roof : MonoBehaviour
             //Debug.Log("finding player");
             if (other.GetComponent<Alteruna.Avatar>().IsMe)
             {
+                windSound.TurnDownWind();
                 Debug.Log(other.gameObject.name);
                 roofMesh.enabled = false;
             }
@@ -41,6 +37,7 @@ public class Roof : MonoBehaviour
         {
             if (other.TryGetComponent(out Alteruna.Avatar avatar) && avatar.IsMe)
             {
+                windSound.TurnUpWind();
                 roofMesh.enabled = true;
             }
         }
