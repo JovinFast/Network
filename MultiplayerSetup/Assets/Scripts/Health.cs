@@ -17,6 +17,7 @@ public class Health : AttributesSync
     private void Awake()
     {
         
+        CollectObjectsWithTag();
         shootScript = GetComponent<Shoot>();
         avatar = GetComponent<Alteruna.Avatar>();
     }
@@ -28,7 +29,6 @@ public class Health : AttributesSync
         {
             enabled = false;
         }
-        CollectObjectsWithTag();
         currentHealth = playerHealth;
     }
 
@@ -78,8 +78,7 @@ public class Health : AttributesSync
     }
     private void SetNewPosition()
     {
-
-        int respawnIndex = Random.Range(0, respawnPoints.Count - 1);
+        int respawnIndex = Random.Range(0, respawnPoints.Count);
         transform.position = respawnPoints[respawnIndex].position;
     }
     private void CollectObjectsWithTag()
@@ -89,6 +88,7 @@ public class Health : AttributesSync
         foreach (GameObject obj in objects)
         {
            respawnPoints.Add(obj.transform);
+            Debug.Log("Added Respawnpoint");
         }
     }
 }
