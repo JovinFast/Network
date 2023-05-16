@@ -10,6 +10,11 @@ public class FieldOfView : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (!avatar.IsMe)
+        {
+            enabled = false;
+            return;
+        }
         avatar = GetComponent<Alteruna.Avatar>();
         if(avatar.IsMe)
         {
