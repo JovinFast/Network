@@ -11,23 +11,27 @@ public class CameraFollow : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        
+
     }
     // Update is called once per frame
     void Update()
     {
-        if (camTarget == null)
+        //if (camTarget != null)
+        //{
+        //    camTarget = GameObject.Find("camFollow").transform;
+        //    if (camTarget.parent.GetComponent<Alteruna.Avatar>().IsMe)
+        //    {
+
+        //    }
+        //    //camTarget = GameObject.Find("camFollow").transform;
+        if (camTarget != null)
         {
-            camTarget = GameObject.Find("camFollow").transform;
-            if (camTarget.parent.GetComponent<Alteruna.Avatar>().IsMe)
-            {
 
-            }
-            camTarget = GameObject.Find("camFollow").transform;
+            transform.position = Vector3.Lerp(transform.position, camTarget.position, pLerp);
+            transform.rotation = Quaternion.Lerp(transform.rotation, camTarget.rotation, rLerp);
         }
+        //}
 
-        transform.position = Vector3.Lerp(transform.position, camTarget.position, pLerp);
-        transform.rotation = Quaternion.Lerp(transform.rotation, camTarget.rotation, rLerp);
     }
 
     public void ApplyCamera(GameObject player)

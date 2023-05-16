@@ -5,20 +5,25 @@ using UnityEngine;
 public class SetCamera : MonoBehaviour
 {
     CameraFollow cameraFollowScript;
-
+    [SerializeField] GameObject camFollow;
     private void Awake()
     {
         cameraFollowScript = FindAnyObjectByType<CameraFollow>();
+
+    }
+    private void Start()
+    {
+        CollectObjectsWithTag();
     }
     private void CollectObjectsWithTag()
     {
-        GameObject[] objects = GameObject.FindGameObjectsWithTag("camFollow");
+        GameObject[] objects = GameObject.FindGameObjectsWithTag("Player");
 
         foreach (GameObject obj in objects)
         {
             if (obj.GetComponent<Alteruna.Avatar>().IsMe)
             {
-                cameraFollowScript.ApplyCamera(obj);
+                cameraFollowScript.ApplyCamera(camFollow);
             }
         }
     }
