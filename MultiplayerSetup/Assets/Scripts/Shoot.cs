@@ -39,4 +39,12 @@ public class Shoot : MonoBehaviour
             //Instantiate(bulletPrefab, pivotPoint.transform.position, pivotPoint.transform.rotation);
         }
     }
+    
+    public void DecreaseReloadSpeed()
+    {
+        if (reloadSpeed > 0)
+        {
+            reloadSpeed -= 1;
+        }
+    }
 }
