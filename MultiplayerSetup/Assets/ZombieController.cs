@@ -2,11 +2,11 @@ using UnityEngine;
 using Alteruna;
 public class ZombieController : AttributesSync
 {
-    public float movementSpeed = 3f; // Speed at which the zombie moves towards the player
-    public float detectionRange = 10f; // Range at which the zombie detects the player
+    //public float movementSpeed = 3f; // Speed at which the zombie moves towards the player
+    //public float detectionRange = 10f; // Range at which the zombie detects the player
     public float moveForce = 500f; // Force applied to move the zombie
 
-    private GameObject targetPlayer; // Reference to the closest player's transform
+    public GameObject targetPlayer; // Reference to the closest player's transform
     private bool isPlayerInRange = false; // Flag to track if a player is in range
     private bool isPursuing = false; // Flag to track if the zombie is actively pursuing a target
     private RigidbodySynchronizable zombieRigidbody; // Reference to the zombie's rigidbody
@@ -66,14 +66,13 @@ public class ZombieController : AttributesSync
         }
     }
 
-    private void OnTriggerExit(Collider other)
+
+
+    public void ResetTarget()
     {
-        if (other.CompareTag("Player") && targetPlayer == other.transform.gameObject)
-        {
-            isPlayerInRange = false;
-            isPursuing = false; // Stop pursuing the target
-            targetPlayer = null; // Reset the target player reference
-            avatar = null;
-        }
+        isPlayerInRange = false;
+        isPursuing = false; // Stop pursuing the target
+        targetPlayer = null; // Reset the target player reference
+        avatar = null;
     }
 }
