@@ -128,63 +128,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6241628293452904232, guid: e951684fbee2b0847b3fcc3f19922a75, type: 3}
   m_PrefabInstance: {fileID: 6241628293422165025}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &107421818 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5376244498220299792, guid: e3ea2c591ec599c4ba4b7047743099a4, type: 3}
-  m_PrefabInstance: {fileID: 5376244498126247530}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &107421827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107421818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1312809854, guid: 0ae8d181602a00248a82f64a684a1c88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Multiplayer: {fileID: 1336096397}
-  _uidString: 7b91eede-e350-4e8c-82b4-1709556b7707
-  BucketBehaviors:
-  - Name: Min
-    NetLOD: 0
-    Frequency: -1
-    Pending: 0
-    LastUpdated: 0
-    NeverString: Never
-    RealtimeString: Realtime
-  - Name: Low
-    NetLOD: 1
-    Frequency: 0
-    Pending: 0
-    LastUpdated: 0
-    NeverString: Never
-    RealtimeString: Realtime
-  - Name: Mid
-    NetLOD: 2
-    Frequency: 0
-    Pending: 0
-    LastUpdated: 0
-    NeverString: Never
-    RealtimeString: Realtime
-  - Name: High
-    NetLOD: 3
-    Frequency: 0
-    Pending: 0
-    LastUpdated: 0
-    NeverString: Never
-    RealtimeString: Realtime
-  - Name: Max
-    NetLOD: 4
-    Frequency: 500
-    Pending: 0
-    LastUpdated: 0
-    NeverString: Never
-    RealtimeString: Realtime
-  UseGlobalPosition: 0
-  SyncInFixedUpdate: 1
 --- !u!1 &185313034
 GameObject:
   m_ObjectHideFlags: 0
@@ -3583,7 +3526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 0}
-  _uidString: 1a1b8e99-a847-47cd-b470-ea43625bc85e
+  _uidString: 221e508e-2f20-4aae-9eb9-bc794f020dce
   BucketBehaviors:
   - Name: Min
     NetLOD: 0
@@ -3638,7 +3581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 0}
-  _uidString: 93b99197-8af9-4a36-939e-b0d7ec3fc774
+  _uidString: fa37b9c3-11c3-4c54-9a52-524c4c5cff78
   BucketBehaviors:
   - Name: Min
     NetLOD: 0
@@ -3796,7 +3739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 0}
-  _uidString: 6777a4c2-453e-4a57-af3d-e8712ec4f471
+  _uidString: daa912fb-cf3c-413d-86aa-ae36122c9dc9
   BucketBehaviors:
   - Name: Min
     NetLOD: 0
@@ -3851,7 +3794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 0}
-  _uidString: 95f3571b-d5b5-4ce3-8c62-37c3a486b1b9
+  _uidString: e1ef190c-b203-4fa5-a441-afff97637659
   BucketBehaviors:
   - Name: Min
     NetLOD: 0
@@ -4357,7 +4300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 0}
-  _uidString: 73f6ffda-5455-4702-af83-930789d2500b
+  _uidString: 7d4acae8-0005-404a-92bd-5e51e39dfe14
   BucketBehaviors:
   - Name: Min
     NetLOD: 0
@@ -4526,7 +4469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 0}
-  _uidString: 2e0be2db-f5f0-4196-8d26-003be8adb824
+  _uidString: f54bc7ef-80bf-4ecf-a9e5-6ad6893066c7
   BucketBehaviors:
   - Name: Min
     NetLOD: 0
@@ -4865,10 +4808,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1716801935234158399, guid: e3ea2c591ec599c4ba4b7047743099a4, type: 3}
-      propertyPath: _uidString
-      value: f998ade1-fbb2-4015-9ee1-140fb8c2cdab
-      objectReference: {fileID: 0}
+    - target: {fileID: 107421827, guid: e3ea2c591ec599c4ba4b7047743099a4, type: 3}
+      propertyPath: Multiplayer
+      value: 
+      objectReference: {fileID: 1336096397}
     - target: {fileID: 5376244498220299792, guid: e3ea2c591ec599c4ba4b7047743099a4, type: 3}
       propertyPath: m_Name
       value: ZombieParent
@@ -4917,13 +4860,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5376244498220300010, guid: e3ea2c591ec599c4ba4b7047743099a4, type: 3}
-      propertyPath: Multiplayer
-      value: 
-      objectReference: {fileID: 1336096397}
-    m_RemovedComponents:
-    - {fileID: 5376244498318824894, guid: e3ea2c591ec599c4ba4b7047743099a4, type: 3}
-    - {fileID: 5376244498220300010, guid: e3ea2c591ec599c4ba4b7047743099a4, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3ea2c591ec599c4ba4b7047743099a4, type: 3}
 --- !u!1 &5421957695381465633
 GameObject:
@@ -5238,7 +5175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 0}
-  _uidString: a6f9e735-5db0-4e59-b540-6ecfef305c39
+  _uidString: 896d2da5-59fe-41c7-bfaf-90a864e2e097
   BucketBehaviors:
   - Name: Min
     NetLOD: 0
@@ -5308,7 +5245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 0}
-  _uidString: fb29220b-bd7a-451f-ad97-ebc893c9879c
+  _uidString: 3984a790-5fde-44b6-95ed-100eb2f627bf
   BucketBehaviors:
   - Name: Min
     NetLOD: 0
@@ -5614,7 +5551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 0}
-  _uidString: 022162b0-79d8-4e3f-a0a1-b4e545c12b13
+  _uidString: 2dc53fe7-c3ce-418b-bf33-e140d8678a58
   BucketBehaviors:
   - Name: Min
     NetLOD: 0
