@@ -13,7 +13,7 @@ public class Shoot : MonoBehaviour
     [SerializeField] float decreaseAmount;
     
     private float reloadSpeed = 2;
-    private float reloadSpeedStart;
+    public float reloadSpeedStart;
     
 
     // Start is called before the first frame update
@@ -34,7 +34,7 @@ public class Shoot : MonoBehaviour
         if (reloadSpeed > 0) return; 
         if(Input.GetMouseButtonDown(0)) 
         {
-            spawner.Spawn(1, pivotPoint.transform.position, pivotPoint.transform.rotation);
+            spawner.Spawn(0, pivotPoint.transform.position, pivotPoint.transform.rotation);
             reloadSpeed = reloadSpeedStart;
             //Instantiate(bulletPrefab, pivotPoint.transform.position, pivotPoint.transform.rotation);
         }
@@ -42,9 +42,9 @@ public class Shoot : MonoBehaviour
     
     public void DecreaseReloadSpeed()
     {
-        if (reloadSpeed > 0)
+        if (reloadSpeedStart > 0)
         {
-            reloadSpeed -= 1;
+            reloadSpeedStart -= 0.3f;
         }
     }
 }

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6734875542753667101}
   - component: {fileID: 8989970841993799719}
   - component: {fileID: -2665976959460098858}
+  - component: {fileID: 6649958906743851978}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -174,6 +175,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6740034599695580548, guid: 70f771ee17fded640b10e82e27cbbca9, type: 3}
   avatar: {fileID: 0}
   decreaseAmount: 1
+  reloadSpeedStart: 0
 --- !u!114 &-2665976959460098858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,6 +188,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15125d7b695a2f941b19d09f153e18c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &6649958906743851978
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2997990256602590665}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5272377769081351664
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,7 +294,7 @@ BoxCollider:
   m_GameObject: {fileID: 5272377769081351664}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
