@@ -102,7 +102,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &8505967598013269814
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -131,6 +131,7 @@ MonoBehaviour:
   wallPartsPrefab: {fileID: 7457537544607900867, guid: 7caa73f914781cc4698683f5f6c2e6d1, type: 3}
   health: 50
   currentHealth: 0
+  isDestroyed: 0
 --- !u!114 &3713200747037301092
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1288,12 +1288,48 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1751281255139166946, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2660413829299686266, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098051153824219795, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4260265790547824773, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
       propertyPath: m_Name
       value: Buildning (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4260265790547824773, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169591632987706547, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5463763506160609547, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954556553111512452, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5971078490593542944, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8060722573762407863, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410125637255524598, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
+      propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8569343048652084072, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
@@ -1784,12 +1820,48 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1751281255139166946, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2660413829299686266, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098051153824219795, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4260265790547824773, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
       propertyPath: m_Name
       value: Buildning (3)
       objectReference: {fileID: 0}
     - target: {fileID: 4260265790547824773, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169591632987706547, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5463763506160609547, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954556553111512452, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5971078490593542944, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8060722573762407863, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410125637255524598, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
+      propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8569343048652084072, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
@@ -2326,9 +2398,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1751281255139166946, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2660413829299686266, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098051153824219795, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4260265790547824773, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
       propertyPath: m_Name
       value: Buildning (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169591632987706547, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5463763506160609547, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5954556553111512452, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5971078490593542944, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8060722573762407863, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410125637255524598, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8569343048652084072, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
       propertyPath: m_RootOrder
@@ -2761,7 +2869,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!33 &1793062982760324431
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2960,7 +3068,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!23 &2740560993753744302
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3287,7 +3395,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &4260265790896089580
 GameObject:
   m_ObjectHideFlags: 0
@@ -3531,7 +3639,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &5421957695381465633
 GameObject:
   m_ObjectHideFlags: 0
@@ -3577,7 +3685,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!23 &5479427448747885085
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3690,7 +3798,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!54 &5971078490907998793
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3706,7 +3814,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &5989957535126536359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4108,7 +4216,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &8072392557047342527
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4153,7 +4261,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!4 &8569343048429398529
 Transform:
   m_ObjectHideFlags: 0
