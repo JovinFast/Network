@@ -44,7 +44,7 @@ public class Shoot : MonoBehaviour
     {
         if (reloadSpeedStart > 0)
         {
-            reloadSpeedStart -= 0.3f;
+            reloadSpeedStart -= 0.5f;
         }
     }
 

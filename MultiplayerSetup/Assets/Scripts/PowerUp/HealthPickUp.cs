@@ -5,7 +5,7 @@ using Alteruna;
 
 public class HealthPickUp : AttributesSync
 {
-    int healthAmount = 10;
+    int healthAmount = 25;
    
     [SerializeField] AudioClip healthSound;
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 public class FieldOfView : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class FieldOfView : MonoBehaviour
         if(avatar.IsMe)
         {
             GetComponentInChildren<MeshRenderer>().enabled = true;
+            GetComponentInChildren<Light>().enabled = true;
         }
     }
 
@@ -35,6 +37,7 @@ public class FieldOfView : MonoBehaviour
             }
 
             other.GetComponentInChildren<MeshRenderer>().enabled = true;
+            other.GetComponentInChildren<Light>().enabled = true;
         }
     }
 
@@ -47,6 +50,7 @@ public class FieldOfView : MonoBehaviour
                 return;
             }
             other.GetComponentInChildren<MeshRenderer>().enabled = false;
+            other.GetComponentInChildren<Light>().enabled = false;
         }
     }
 }

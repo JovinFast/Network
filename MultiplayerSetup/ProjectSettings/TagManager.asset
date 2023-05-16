@@ -7,6 +7,7 @@ TagManager:
   - NetworkManager
   - Bullet
   - RespawnPoint
+  - camFollow
   layers:
   - Default
   - TransparentFX

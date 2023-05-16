@@ -39,7 +39,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 269250431}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 995483509260474726}
   - component: {fileID: -7344765321482340065}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player 1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -466,14 +466,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7011212936100636626}
-  m_LocalRotation: {x: 0.4164695, y: -0, z: -0, w: 0.90914977}
-  m_LocalPosition: {x: 0, y: 4.11, z: -2.601}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 190127113254168461}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 49.224, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8698758950629873345
 GameObject:
   m_ObjectHideFlags: 0
