@@ -6,17 +6,19 @@ public class ZombieController : MonoBehaviour
     public float detectionRange = 10f; // Range at which the zombie detects the player
     public float moveForce = 500f; // Force applied to move the zombie
 
-    private Transform targetPlayer; // Reference to the closest player's transform
+    private GameObject targetPlayer; // Reference to the closest player's transform
     private bool isPlayerInRange = false; // Flag to track if a player is in range
     private bool isPursuing = false; // Flag to track if the zombie is actively pursuing a target
     private RigidbodySynchronizable zombieRigidbody; // Reference to the zombie's rigidbody
-    
+
+    private Alteruna.Avatar avatar;
+
     private void Awake()
     {
         zombieRigidbody = GetComponent<RigidbodySynchronizable>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (isPursuing && targetPlayer != null)
         {
@@ -26,31 +28,36 @@ public class ZombieController : MonoBehaviour
 
     private void MoveTowardsPlayer()
     {
-        // Calculate the direction towards the player
-        Vector3 direction = targetPlayer.position - transform.position;
-        direction.y = 0; // Ignore vertical movement
+        if (avatar.IsMe)
+        {
+            // Calculate the direction towards the player
+            Vector3 direction = targetPlayer.transform.position - transform.position;
+            direction.y = 0; // Ignore vertical movement
 
-        // Normalize the direction vector
-        direction.Normalize();
+            // Normalize the direction vector
+            direction.Normalize();
 
-        // Apply force to move the zombie
-        zombieRigidbody.AddForce(direction * moveForce * Time.deltaTime);
+            // Apply force to move the zombie
+            zombieRigidbody.AddForce(direction * moveForce * Time.deltaTime);
 
-        // Rotate the zombie to face the player
-        transform.rotation = Quaternion.LookRotation(direction);
+            // Rotate the zombie to face the player
+            transform.rotation = Quaternion.LookRotation(direction);
+
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            avatar = other.GetComponent<Alteruna.Avatar>();
             isPlayerInRange = true;
 
             // Check if the new player is closer than the current target
-            Transform playerTransform = other.transform;
-            float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
+            GameObject playerTransform = other.gameObject;
+            float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.transform.position);
 
-            if (targetPlayer == null || distanceToPlayer < Vector3.Distance(transform.position, targetPlayer.position))
+            if (targetPlayer == null || distanceToPlayer < Vector3.Distance(transform.position, targetPlayer.transform.position))
             {
                 targetPlayer = playerTransform;
                 isPursuing = true; // Start pursuing the target
@@ -65,6 +72,7 @@ public class ZombieController : MonoBehaviour
             isPlayerInRange = false;
             isPursuing = false; // Stop pursuing the target
             targetPlayer = null; // Reset the target player reference
+            avatar = null;
         }
     }
 }
