@@ -58,54 +58,25 @@ public class ZombieController : AttributesSync
 
     private void OnTriggerEnter(Collider other)
     {
-
-        //if (other.CompareTag("Player"))
-        //{
-        //    isPlayerInRange = true;
-
-        //    // Check if the new player is closer than the current target
-        //    GameObject playerTransform = other.gameObject;
-        //    float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.transform.position);
-
-        //    if (targetPlayer == null || distanceToPlayer < Vector3.Distance(transform.position, targetPlayer.transform.position))
-        //    {
-        //        avatar = other.GetComponent<Alteruna.Avatar>();
-        //        if (avatar.IsMe) aS.Play();
-        //        //targetPlayer = playerTransform;
-        //        InvokeRemoteMethod(nameof(SetPlayerTarget), UserId.AllInclusive);
-        //        //SetPlayerTarget(playerTransform);
-        //        isPursuing = true; // Start pursuing the target
-        //    }
-        //}
         if (other.CompareTag("Player"))
-        {
-
-            targetCollider = other;
-            InvokeRemoteMethod(nameof(SyncOnTriggerEnter));
-        }
-    }
-    [SynchronizableMethod]
-    private void SyncOnTriggerEnter()
-    {
-        if (targetCollider.CompareTag("Player"))
         {
             isPlayerInRange = true;
 
             // Check if the new player is closer than the current target
-            GameObject playerTransform = targetCollider.gameObject;
+            GameObject playerTransform = other.gameObject;
             float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.transform.position);
 
             if (targetPlayer == null || distanceToPlayer < Vector3.Distance(transform.position, targetPlayer.transform.position))
             {
-                avatar = targetCollider.GetComponent<Alteruna.Avatar>();
+                avatar = other.GetComponent<Alteruna.Avatar>();
                 if (avatar.IsMe) aS.Play();
                 targetPlayer = playerTransform;
-
-                //SetPlayerTarget(playerTransform);
                 isPursuing = true; // Start pursuing the target
             }
         }
+
     }
+    
 
 
     public void ResetTarget()
