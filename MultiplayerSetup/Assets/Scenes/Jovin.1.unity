@@ -1879,17 +1879,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 107421827, guid: e3ea2c591ec599c4ba4b7047743099a4, type: 3}
-      propertyPath: Multiplayer
-      value: 
-      objectReference: {fileID: 1336096397}
     - target: {fileID: 5376244498220299792, guid: e3ea2c591ec599c4ba4b7047743099a4, type: 3}
       propertyPath: m_Name
       value: ZombieParent (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5376244498220299798, guid: e3ea2c591ec599c4ba4b7047743099a4, type: 3}
-      propertyPath: _uidString
-      value: 492e9d65-4965-467e-84aa-ffec45350009
       objectReference: {fileID: 0}
     - target: {fileID: 5376244498220299799, guid: e3ea2c591ec599c4ba4b7047743099a4, type: 3}
       propertyPath: m_RootOrder
@@ -1935,6 +1927,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5954115124541017373, guid: e3ea2c591ec599c4ba4b7047743099a4, type: 3}
+      propertyPath: Multiplayer
+      value: 
+      objectReference: {fileID: 1336096397}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3ea2c591ec599c4ba4b7047743099a4, type: 3}
 --- !u!1001 &546719400
@@ -6779,7 +6775,7 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 107421827, guid: e3ea2c591ec599c4ba4b7047743099a4, type: 3}
+    - target: {fileID: 2352761856559787534, guid: e3ea2c591ec599c4ba4b7047743099a4, type: 3}
       propertyPath: Multiplayer
       value: 
       objectReference: {fileID: 1336096397}

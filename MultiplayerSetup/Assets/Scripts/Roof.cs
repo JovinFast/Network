@@ -43,7 +43,7 @@ public class Roof : MonoBehaviour
             if (other.GetComponent<Alteruna.Avatar>().IsMe)
             {
                 windSound.TurnDownWind();
-                Debug.Log(other.gameObject.name);
+                //Debug.Log(other.gameObject.name);
                 roofMesh.enabled = false;
             }
         }
