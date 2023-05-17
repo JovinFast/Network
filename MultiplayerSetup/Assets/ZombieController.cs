@@ -9,17 +9,17 @@ public class ZombieController : AttributesSync
     public GameObject targetPlayer; // Reference to the closest player's transform
     private bool isPlayerInRange = false; // Flag to track if a player is in range
     private bool isPursuing = false; // Flag to track if the zombie is actively pursuing a target
-    private RigidbodySynchronizable zombieRigidbody; // Reference to the zombie's rigidbody
+    private Rigidbody zombieRigidbody; // Reference to the zombie's rigidbody
     AudioSource aS;
     private Alteruna.Avatar avatar;
-    [SerializeField]ZombieDealDamage ZombieDamageScript;
-
+    [SerializeField] ZombieDealDamage ZombieDamageScript;
+    Collider targetCollider;
     private void Awake()
     {
-        zombieRigidbody = GetComponent<RigidbodySynchronizable>();
+        zombieRigidbody = GetComponent<Rigidbody>();
         aS = GetComponent<AudioSource>();
     }
- 
+
 
     private void FixedUpdate()
     {
@@ -29,34 +29,59 @@ public class ZombieController : AttributesSync
             InvokeRemoteMethod(nameof(MoveTowardsPlayer), UserId.AllInclusive);
         }
     }
-   [SynchronizableMethod]
+    [SynchronizableMethod]
     private void MoveTowardsPlayer()
     {
 
         if (targetPlayer == null) return;
-            if (!ZombieDamageScript.canDealDamage)
+        if (!ZombieDamageScript.canDealDamage)
         {
             zombieRigidbody.velocity = Vector3.zero;
             return;
         }
-        
-            // Calculate the direction towards the player
-            Vector3 direction = targetPlayer.transform.position - transform.position;
-            direction.y = 0; // Ignore vertical movement
 
-            // Normalize the direction vector
-            direction.Normalize();
+        // Calculate the direction towards the player
+        Vector3 direction = targetPlayer.transform.position - transform.position;
+        direction.y = 0; // Ignore vertical movement
 
-            // Apply force to move the zombie
-            zombieRigidbody.AddForce(direction * moveForce * Time.deltaTime);
+        // Normalize the direction vector
+        direction.Normalize();
 
-            // Rotate the zombie to face the player
-            transform.rotation = Quaternion.LookRotation(direction);
+        // Apply force to move the zombie
+        zombieRigidbody.AddForce(direction * moveForce * Time.deltaTime);
 
-        
+        // Rotate the zombie to face the player
+        transform.rotation = Quaternion.LookRotation(direction);
+
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        //if (other.CompareTag("Player"))
+        //{
+        //    isPlayerInRange = true;
+
+        //    // Check if the new player is closer than the current target
+        //    GameObject playerTransform = other.gameObject;
+        //    float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.transform.position);
+
+        //    if (targetPlayer == null || distanceToPlayer < Vector3.Distance(transform.position, targetPlayer.transform.position))
+        //    {
+        //        avatar = other.GetComponent<Alteruna.Avatar>();
+        //        if (avatar.IsMe) aS.Play();
+        //        //targetPlayer = playerTransform;
+        //        InvokeRemoteMethod(nameof(SetPlayerTarget), UserId.AllInclusive);
+        //        //SetPlayerTarget(playerTransform);
+        //        isPursuing = true; // Start pursuing the target
+        //    }
+        //}
+        targetCollider = other;
+        InvokeRemoteMethod(nameof(SyncOnTriggerEnter));
     }
     [SynchronizableMethod]
-    private void OnTriggerEnter(Collider other)
+    private void SyncOnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -71,12 +96,13 @@ public class ZombieController : AttributesSync
                 avatar = other.GetComponent<Alteruna.Avatar>();
                 if (avatar.IsMe) aS.Play();
                 //targetPlayer = playerTransform;
-                SetPlayerTarget(playerTransform);
+                InvokeRemoteMethod(nameof(SetPlayerTarget), UserId.AllInclusive);
+                //SetPlayerTarget(playerTransform);
                 isPursuing = true; // Start pursuing the target
             }
         }
     }
- 
+
 
     public void ResetTarget()
     {
@@ -85,9 +111,9 @@ public class ZombieController : AttributesSync
         targetPlayer = null; // Reset the target player reference
         avatar = null;
     }
-    [SynchronizableMethod]
+
     private void SetPlayerTarget(GameObject other)
-    {      
-            targetPlayer = other;
+    {
+        targetPlayer = other;
     }
 }
