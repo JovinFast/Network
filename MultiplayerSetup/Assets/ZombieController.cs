@@ -77,26 +77,30 @@ public class ZombieController : AttributesSync
         //        isPursuing = true; // Start pursuing the target
         //    }
         //}
-        targetCollider = other;
-        InvokeRemoteMethod(nameof(SyncOnTriggerEnter));
+        if (other.CompareTag("Player"))
+        {
+
+            targetCollider = other;
+            InvokeRemoteMethod(nameof(SyncOnTriggerEnter));
+        }
     }
     [SynchronizableMethod]
-    private void SyncOnTriggerEnter(Collider other)
+    private void SyncOnTriggerEnter()
     {
-        if (other.CompareTag("Player"))
+        if (targetCollider.CompareTag("Player"))
         {
             isPlayerInRange = true;
 
             // Check if the new player is closer than the current target
-            GameObject playerTransform = other.gameObject;
+            GameObject playerTransform = targetCollider.gameObject;
             float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.transform.position);
 
             if (targetPlayer == null || distanceToPlayer < Vector3.Distance(transform.position, targetPlayer.transform.position))
             {
-                avatar = other.GetComponent<Alteruna.Avatar>();
+                avatar = targetCollider.GetComponent<Alteruna.Avatar>();
                 if (avatar.IsMe) aS.Play();
-                //targetPlayer = playerTransform;
-                InvokeRemoteMethod(nameof(SetPlayerTarget), UserId.AllInclusive);
+                targetPlayer = playerTransform;
+
                 //SetPlayerTarget(playerTransform);
                 isPursuing = true; // Start pursuing the target
             }
@@ -112,8 +116,5 @@ public class ZombieController : AttributesSync
         avatar = null;
     }
 
-    private void SetPlayerTarget(GameObject other)
-    {
-        targetPlayer = other;
-    }
+
 }
