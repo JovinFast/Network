@@ -18,14 +18,14 @@ public class DisplayHealth : MonoBehaviour
     }
     private void Start()
     {
-        //if (!avatar.IsMe)
-        //{
-        //    enabled = false;
-        //}
-        //healthText = GameObject.FindGameObjectWithTag("HPDisplay").GetComponentInChildren<TextMeshProUGUI>();
-        //healthScript = GetComponent<Health>();
-        //UpdateHealth();
-        
+        if (!avatar.IsMe)
+        {
+            enabled = false;
+        }
+        healthText = GameObject.FindGameObjectWithTag("HPDisplay").GetComponentInChildren<TextMeshProUGUI>();
+        healthScript = GetComponent<Health>();
+        UpdateHealth();
+
     }
 
     public void UpdateHealth()
