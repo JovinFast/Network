@@ -31,12 +31,14 @@ public class ZombieController : AttributesSync
     [SynchronizableMethod]
     private void MoveTowardsPlayer()
     {
+
+        
         if (!ZombieDamageScript.canDealDamage)
         {
             zombieRigidbody.velocity = Vector3.zero;
             return;
         }
-        
+        if (!avatar.IsMe) return;
             // Calculate the direction towards the player
             Vector3 direction = targetPlayer.transform.position - transform.position;
             direction.y = 0; // Ignore vertical movement
