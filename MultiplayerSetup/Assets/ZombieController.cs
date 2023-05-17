@@ -25,11 +25,11 @@ public class ZombieController : AttributesSync
     {
         if (isPursuing && targetPlayer != null)
         {
-            MoveTowardsPlayer();
-            //InvokeRemoteMethod(nameof(MoveTowardsPlayer), UserId.AllInclusive);
+            //MoveTowardsPlayer();
+            InvokeRemoteMethod(nameof(MoveTowardsPlayer), UserId.AllInclusive);
         }
     }
-   // [SynchronizableMethod]
+   [SynchronizableMethod]
     private void MoveTowardsPlayer()
     {
 
