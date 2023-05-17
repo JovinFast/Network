@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 1716801935234158399}
   - component: {fileID: 8134142304888021007}
   - component: {fileID: 6916250550194025734}
-  - component: {fileID: 1623141689}
+  - component: {fileID: 6146221981178902736}
   m_Layer: 0
   m_Name: ZombieParent
   m_TagString: Untagged
@@ -408,7 +408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 0}
-  _uidString: 0eb70315-59c9-459a-b5ab-ed851d213726
+  _uidString: 34569210-bb5b-47f7-a4b2-b56838f0b3ec
   Reliability: 1
   LocalMethodBehavior: 1
   moveForce: 6000
@@ -470,7 +470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 0}
-  _uidString: 46161cca-3d21-4146-aceb-3fc27dd126b3
+  _uidString: 9168f6c3-ec4d-41cf-b6f3-d8e2c04b5658
   Reliability: 1
   LocalMethodBehavior: 1
 --- !u!82 &8134142304888021007
@@ -582,7 +582,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.0649709, z: 0.75557053}
   m_Center: {x: -7.016221e-11, y: 0.03248477, z: -0.122214735}
---- !u!114 &1623141689
+--- !u!114 &6146221981178902736
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -595,7 +595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 0}
-  _uidString: c55b8f85-6cd0-46c0-8f62-e1c57f4c778e
+  _uidString: 0bbb1fdd-5337-4aeb-98a2-c07c14e1a32b
   BucketBehaviors:
   - Name: Min
     NetLOD: 0
@@ -748,6 +748,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 0}
-  _uidString: 57bec25d-3c0a-45bd-a573-33895e91bd52
+  _uidString: 8b77c892-aee8-4473-ae84-0d87b74f05d0
   Reliability: 1
   LocalMethodBehavior: 1
