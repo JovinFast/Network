@@ -25,7 +25,7 @@ public class DisplayHealth : MonoBehaviour
         healthText = GameObject.FindGameObjectWithTag("HPDisplay").GetComponentInChildren<TextMeshProUGUI>();
         healthScript = GetComponent<Health>();
         UpdateHealth();
-        
+
     }
 
     public void UpdateHealth()
