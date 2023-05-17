@@ -5,6 +5,7 @@ using UnityEngine;
 public class GrenadeExplosion : MonoBehaviour
 {
     public float explosionDamage = 20;
+    public float playerDamage = 20;
     // Start is called before the first frame update
     void Start()
     {

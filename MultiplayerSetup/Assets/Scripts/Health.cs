@@ -48,6 +48,12 @@ public class Health : AttributesSync
             displayHealthScript.UpdateHealth();
         }
 
+        if (collision.gameObject.CompareTag("Explosion"))
+        {
+            currentHealth -= collision.gameObject.GetComponent<GrenadeExplosion>().playerDamage;
+            displayHealthScript.UpdateHealth();
+        }
+
         if (currentHealth <= 0)
         {
             if (avatar.IsMe)
