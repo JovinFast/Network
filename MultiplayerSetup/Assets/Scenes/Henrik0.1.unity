@@ -582,6 +582,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f180fc47f31fa74eb73b44d0569e62e, type: 3}
+--- !u!1 &510042848 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8763101913705298807, guid: 5a577542a281e0a448dc3b383023e1f2, type: 3}
+  m_PrefabInstance: {fileID: 1556586540}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &510042854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510042848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc333b082c05d0f4998160502358f992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &607693109
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1301,7 +1318,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 1000
-  field of view: 40
+  field of view: 106
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2307,6 +2324,10 @@ PrefabInstance:
     - target: {fileID: 4852062842442056073, guid: fce3729aa61f6804da029a075f8ab0ab, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852062843157208467, guid: fce3729aa61f6804da029a075f8ab0ab, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fce3729aa61f6804da029a075f8ab0ab, type: 3}
