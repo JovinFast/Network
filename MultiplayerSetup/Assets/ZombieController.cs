@@ -9,14 +9,14 @@ public class ZombieController : AttributesSync
     public GameObject targetPlayer; // Reference to the closest player's transform
     private bool isPlayerInRange = false; // Flag to track if a player is in range
     private bool isPursuing = false; // Flag to track if the zombie is actively pursuing a target
-    private Rigidbody zombieRigidbody; // Reference to the zombie's rigidbody
+    private RigidbodySynchronizable zombieRigidbody; // Reference to the zombie's rigidbody
     AudioSource aS;
     private Alteruna.Avatar avatar;
     [SerializeField]ZombieDealDamage ZombieDamageScript;
 
     private void Awake()
     {
-        zombieRigidbody = GetComponent<Rigidbody>();
+        zombieRigidbody = GetComponent<RigidbodySynchronizable>();
         aS = GetComponent<AudioSource>();
     }
  

@@ -6775,7 +6775,7 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 107421827, guid: e3ea2c591ec599c4ba4b7047743099a4, type: 3}
+    - target: {fileID: 2352761856559787534, guid: e3ea2c591ec599c4ba4b7047743099a4, type: 3}
       propertyPath: Multiplayer
       value: 
       objectReference: {fileID: 1336096397}

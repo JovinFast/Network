@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 1716801935234158399}
   - component: {fileID: 8134142304888021007}
   - component: {fileID: 6916250550194025734}
-  - component: {fileID: 2352761856559787534}
+  - component: {fileID: 6025570110536309616}
   m_Layer: 0
   m_Name: ZombieParent
   m_TagString: Untagged
@@ -408,7 +408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 0}
-  _uidString: 7c2c19a8-0298-4bd6-9790-406332483790
+  _uidString: 80c3aa83-a255-4843-b43b-515097742a04
   Reliability: 1
   LocalMethodBehavior: 1
   moveForce: 6000
@@ -470,7 +470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 0}
-  _uidString: 19927ab1-6843-4287-b49f-1080c017d715
+  _uidString: fe4d5c66-704e-403a-8b48-32ddcb4c0b1b
   Reliability: 1
   LocalMethodBehavior: 1
 --- !u!82 &8134142304888021007
@@ -582,7 +582,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.0649709, z: 0.75557053}
   m_Center: {x: -7.016221e-11, y: 0.03248477, z: -0.122214735}
---- !u!114 &2352761856559787534
+--- !u!114 &6025570110536309616
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -591,11 +591,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5376244498220299792}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1312809854, guid: 0ae8d181602a00248a82f64a684a1c88, type: 3}
+  m_Script: {fileID: 1576325847, guid: 0ae8d181602a00248a82f64a684a1c88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 0}
-  _uidString: b6e1c8e3-651a-48d4-a126-1c360804c8c3
+  _uidString: ed9d9246-e180-43a4-bc64-d72c7ab098a8
   BucketBehaviors:
   - Name: Min
     NetLOD: 0
@@ -632,8 +632,11 @@ MonoBehaviour:
     LastUpdated: 0
     NeverString: Never
     RealtimeString: Realtime
-  UseGlobalPosition: 0
-  SyncInFixedUpdate: 1
+  SyncEveryNUpdates: 2
+  FullSyncEveryNSync: 4
+  SendData: 1
+  AllowCollisionToAssumeOwner: 1
+  Rigidbody: {fileID: 5376244498220299797}
 --- !u!1 &5376244498318824888
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,6 +751,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 0}
-  _uidString: 01218291-f8e6-439f-8764-add383540643
+  _uidString: f1e4a8cf-eec4-4e4a-8943-54c7f20e185d
   Reliability: 1
   LocalMethodBehavior: 1

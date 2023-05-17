@@ -11,6 +11,16 @@ public class ZombieHealth : AttributesSync
     {
         health = 50;
     }
+
+    private void Update()
+    {
+        
+        if (health <= 0)
+        {
+            InvokeRemoteMethod(nameof(DestroyZombie), UserId.AllInclusive);
+            ///DestroyZombie();
+        }
+    }
     private void OnCollisionEnter(Collision collision)
     {
         
@@ -19,14 +29,9 @@ public class ZombieHealth : AttributesSync
             health -= collision.gameObject.GetComponent<Bullet>().damage;
         }
 
-        if (health <= 0)
-        {
-            //InvokeRemoteMethod(nameof(DestroyZombie), UserId.AllInclusive);
-            Destroy(gameObject);
-        }
     }
 
-    //[SynchronizableMethod]
+    [SynchronizableMethod]
     private void DestroyZombie()
     {
         Destroy(gameObject);
