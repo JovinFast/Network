@@ -2,6 +2,8 @@ using UnityEngine;
 using Alteruna;
 public class ZombieController : AttributesSync
 {
+    //public float movementSpeed = 3f; // Speed at which the zombie moves towards the player
+    //public float detectionRange = 10f; // Range at which the zombie detects the player
     public float moveForce = 500f; // Force applied to move the zombie
 
     public GameObject targetPlayer; // Reference to the closest player's transform
@@ -12,15 +14,10 @@ public class ZombieController : AttributesSync
     private Alteruna.Avatar avatar;
     [SerializeField] ZombieDealDamage ZombieDamageScript;
     Collider targetCollider;
-
-    private int playerIndex;
-
     private void Awake()
     {
         zombieRigidbody = GetComponent<RigidbodySynchronizable>();
         aS = GetComponent<AudioSource>();
-        
-
     }
 
 
@@ -35,8 +32,8 @@ public class ZombieController : AttributesSync
     [SynchronizableMethod]
     private void MoveTowardsPlayer()
     {
-        if (avatar.Possessor.Index != Multiplayer.GetUser(Multiplayer.LowestUserIndex)) return;
-            
+
+        if (targetPlayer.TryGetComponent(out Alteruna.Avatar _avatar) && !_avatar.IsMe) return;
             if (!ZombieDamageScript.canDealDamage)
             {
                 zombieRigidbody.velocity = Vector3.zero;
@@ -51,7 +48,7 @@ public class ZombieController : AttributesSync
         direction.Normalize();
 
         // Apply force to move the zombie
-        zombieRigidbody.AddForce(direction * moveForce * Time.deltaTime, ForceMode.Force);
+        zombieRigidbody.AddForce(direction * moveForce * Time.deltaTime);
 
         // Rotate the zombie to face the player
         transform.rotation = Quaternion.LookRotation(direction);
@@ -61,8 +58,7 @@ public class ZombieController : AttributesSync
 
     private void OnTriggerEnter(Collider other)
     {
-        
-            if (other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             isPlayerInRange = true;
 
@@ -90,8 +86,6 @@ public class ZombieController : AttributesSync
         targetPlayer = null; // Reset the target player reference
         avatar = null;
     }
-
-
 
 
 }
