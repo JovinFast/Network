@@ -1,5 +1,66 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3336960991803788646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4249363829243512778}
+  - component: {fileID: 3444577581198595693}
+  - component: {fileID: 2645538503137943115}
+  m_Layer: 0
+  m_Name: DmgZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4249363829243512778
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3336960991803788646}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.592}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5376244498220299799}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3444577581198595693
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3336960991803788646}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6881262, y: 1, z: 0.46587253}
+  m_Center: {x: -0.020568104, y: 0, z: -0.2670666}
+--- !u!114 &2645538503137943115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3336960991803788646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cfcc1b59d7566e4ead3e0b152d97b7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 10
+  damageInterval: 3
+  canDealDamage: 1
 --- !u!1 &5376244496606640156
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,7 +154,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 5376244496606640156}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -191,7 +252,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 5376244497383069625}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -289,7 +350,7 @@ SphereCollider:
   m_GameObject: {fileID: 5376244497872394120}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -330,6 +391,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5376244498318824889}
+  - {fileID: 4249363829243512778}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0.603, z: 0}
@@ -351,6 +413,7 @@ MonoBehaviour:
   LocalMethodBehavior: 1
   moveForce: 6000
   targetPlayer: {fileID: 0}
+  ZombieDamageScript: {fileID: 2645538503137943115}
 --- !u!135 &5376244498220299793
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -572,8 +635,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.11492008, z: 1}
-  m_Center: {x: 0, y: -0.44253996, z: 0}
+  m_Size: {x: 1, y: 1.0649709, z: 0.75557053}
+  m_Center: {x: -7.016221e-11, y: 0.03248477, z: -0.122214735}
 --- !u!1 &5376244498318824888
 GameObject:
   m_ObjectHideFlags: 0

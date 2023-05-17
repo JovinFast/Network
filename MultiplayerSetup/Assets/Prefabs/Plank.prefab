@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: f2ff6c900a0d23c4eaba1124c20c4e1c, type: 3}
+  - {fileID: 2100000, guid: b2c874f5b4604cb439615d94dd0825ad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99,8 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallPartsPrefab: {fileID: 165292715724795570, guid: a7024bffb0d012645b309561ccf1c5bd, type: 3}
-  health: 20
-  currentHealth: 20
+  roof: {fileID: 0}
+  health: 10
+  currentHealth: 10
   isDestroyed: 0
 --- !u!54 &6599482089139150286
 Rigidbody:

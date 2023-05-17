@@ -12,12 +12,14 @@ public class ZombieController : AttributesSync
     private RigidbodySynchronizable zombieRigidbody; // Reference to the zombie's rigidbody
     AudioSource aS;
     private Alteruna.Avatar avatar;
+    [SerializeField]ZombieDealDamage ZombieDamageScript;
 
     private void Awake()
     {
         zombieRigidbody = GetComponent<RigidbodySynchronizable>();
         aS = GetComponent<AudioSource>();
     }
+ 
 
     private void FixedUpdate()
     {
@@ -29,6 +31,11 @@ public class ZombieController : AttributesSync
     [SynchronizableMethod]
     private void MoveTowardsPlayer()
     {
+        if (!ZombieDamageScript.canDealDamage)
+        {
+            zombieRigidbody.velocity = Vector3.zero;
+            return;
+        }
         
             // Calculate the direction towards the player
             Vector3 direction = targetPlayer.transform.position - transform.position;

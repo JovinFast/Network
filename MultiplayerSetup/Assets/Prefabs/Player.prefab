@@ -114,6 +114,8 @@ GameObject:
   - component: {fileID: 9164611664808423290}
   - component: {fileID: 995483509260474726}
   - component: {fileID: -7344765321482340065}
+  - component: {fileID: -3139458307097861836}
+  - component: {fileID: 5786392532934520700}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -347,6 +349,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camFollow: {fileID: 7011212936100636626}
+--- !u!114 &-3139458307097861836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2997990256602590665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f358439d925c48f4299bdb3bc645933d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &5786392532934520700
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2997990256602590665}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4789708, y: 1.6243588, z: 1.5777831}
+  m_Center: {x: 0.050807595, y: -0.016008794, z: 0.025443077}
 --- !u!1 &5272377769081351664
 GameObject:
   m_ObjectHideFlags: 0

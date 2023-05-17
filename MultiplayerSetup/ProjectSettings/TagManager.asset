@@ -8,6 +8,8 @@ TagManager:
   - Bullet
   - RespawnPoint
   - camFollow
+  - Wall
+  - HPDisplay
   layers:
   - Default
   - TransparentFX
