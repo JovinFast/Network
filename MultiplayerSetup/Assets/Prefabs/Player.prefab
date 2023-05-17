@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 190127113254168461}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &269250432
 Light:
@@ -94,6 +94,37 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &2586056067358305810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1540176101607159075}
+  m_Layer: 2
+  m_Name: GrenadePivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1540176101607159075
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2586056067358305810}
+  m_LocalRotation: {x: -0.17964427, y: -0, z: -0, w: 0.9837317}
+  m_LocalPosition: {x: 0, y: 0.547, z: 0.58}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 190127113254168461}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -20.698, y: 0, z: 0}
 --- !u!1 &2997990256602590665
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,6 +169,7 @@ Transform:
   m_Children:
   - {fileID: 5272377769081351675}
   - {fileID: 2122760009284134050}
+  - {fileID: 1540176101607159075}
   - {fileID: 7701823230846920971}
   - {fileID: 269250433}
   - {fileID: 3502257225393165028}
@@ -387,12 +419,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a0583140a971e4498430b216f482cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pivotPoint: {fileID: 8698758950629873345}
+  pivotPoint: {fileID: 2586056067358305810}
   grenadePrefab: {fileID: 6740034599695580548, guid: 36fbab25a9cea1a4da5b285a163ab9b0, type: 3}
   avatar: {fileID: 0}
   decreaseAmount: 0
   chargeUp: 0
   maxCharge: 3
+  cooldown: 3
 --- !u!1 &5272377769081351664
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,7 +567,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 190127113254168461}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &8698758950629873345
 GameObject:
@@ -584,7 +617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5227678798639248100, guid: 1126744fba031894ab300987e6e9adc7, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5227678798639248100, guid: 1126744fba031894ab300987e6e9adc7, type: 3}
       propertyPath: m_LocalScale.z

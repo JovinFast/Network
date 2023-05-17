@@ -10,6 +10,7 @@ TagManager:
   - camFollow
   - Wall
   - HPDisplay
+  - Explosion
   layers:
   - Default
   - TransparentFX

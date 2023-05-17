@@ -14,6 +14,7 @@ public class Grenades : MonoBehaviour
 
     public float chargeUp;
     public float maxCharge;
+    public float cooldown = 3;
 
     private void Awake()
     {
@@ -33,10 +34,12 @@ public class Grenades : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        cooldown -= Time.deltaTime;
+        if (Input.GetMouseButtonDown(1) && cooldown < 0)
         {
             spawner.Spawn("Grenade", pivotPoint.transform.position, pivotPoint.transform.rotation);
             //Instantiate(bulletPrefab, pivotPoint.transform.position, pivotPoint.transform.rotation);
+            cooldown = 3;
         }
     }
 }

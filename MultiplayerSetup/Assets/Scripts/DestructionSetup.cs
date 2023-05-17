@@ -14,6 +14,7 @@ public class DestructionSetup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DestroyAfterTime();
         foreach(Transform part in transform)
         {
             part.AddComponent<RigidbodySynchronizable>();
@@ -27,11 +28,16 @@ public class DestructionSetup : MonoBehaviour
         {
             part.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, upwardModifier);
         }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+    private void DestroyAfterTime()
+    {
+        Destroy(gameObject,10f);
     }
 }
