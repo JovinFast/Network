@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4249363829243512778}
   - component: {fileID: 3444577581198595693}
   - component: {fileID: 2645538503137943115}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: DmgZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 5376244496606640144}
   - component: {fileID: 5376244496606640147}
   - component: {fileID: 5376244496606640146}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Capsule (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 5376244497383069629}
   - component: {fileID: 5376244497383069628}
   - component: {fileID: 5376244497383069631}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 5376244497872394124}
   - component: {fileID: 5376244497872394127}
   - component: {fileID: 5376244497872394126}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +371,7 @@ GameObject:
   - component: {fileID: 8134142304888021007}
   - component: {fileID: 6916250550194025734}
   - component: {fileID: 622089969}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ZombieParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -650,7 +650,7 @@ GameObject:
   - component: {fileID: 5376244498318824895}
   - component: {fileID: 145966532}
   - component: {fileID: 145966531}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zombie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
