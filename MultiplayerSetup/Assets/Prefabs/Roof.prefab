@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80dbb7bef3e2d1f419a63773658d8da3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roofPartsPrefab: {fileID: 7457537544607900867, guid: 7caa73f914781cc4698683f5f6c2e6d1, type: 3}
+  roofPartsPrefab: {fileID: 141324452352137053, guid: fdc9a3ae0f83c7e4c91ab06bb790cae0, type: 3}
   supportPoints:
   - {fileID: 1454424264510893041}
   - {fileID: 2535866451691360487}
@@ -362,6 +362,7 @@ MonoBehaviour:
   destroyedSupports: 0
   requiredSupports: 4
   isNotSupported: 0
+  destroyedWalls: 0
 --- !u!1 &8753749657266247810
 GameObject:
   m_ObjectHideFlags: 0
