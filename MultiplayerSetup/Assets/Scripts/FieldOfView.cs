@@ -98,8 +98,8 @@ public class FieldOfView : MonoBehaviour
         }
         else
         {
-            enemy.GetComponentInChildren<MeshRenderer>().enabled = true;
-            enemy.GetComponentInChildren<Light>().enabled = true;
+            enemy.GetComponentInChildren<MeshRenderer>().enabled = false;
+            enemy.GetComponentInChildren<Light>().enabled = false;
         }
     }
 }
