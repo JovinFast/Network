@@ -6,6 +6,9 @@ using UnityEngine.Experimental.GlobalIllumination;
 public class FieldOfView : MonoBehaviour
 {
     Alteruna.Avatar avatar;
+    private GameObject enemyObject;
+    private bool isInRange;
+    private float rayDistance = 100f;
 
 
     private void Awake()
@@ -30,6 +33,13 @@ public class FieldOfView : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if(isInRange)
+        {
+            EnemyRaycast(enemyObject);
+        }
+    }
 
 
     private void OnTriggerEnter(Collider other)
@@ -41,6 +51,9 @@ public class FieldOfView : MonoBehaviour
             Debug.Log("Finding playermesh");
             if (!other.GetComponent<Alteruna.Avatar>().IsMe)
             {
+                isInRange = true;
+                enemyObject = other.gameObject;
+
                 other.GetComponentInChildren<MeshRenderer>().enabled = true;
                 other.GetComponentInChildren<Light>().enabled = true;
             }
@@ -51,14 +64,25 @@ public class FieldOfView : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (!avatar.IsMe) return;
-            if (other.CompareTag("Player"))
+            
+        if (other.CompareTag("Player"))
         {
             if(!other.GetComponent<Alteruna.Avatar>().IsMe)
             {
+                isInRange = false;
+                enemyObject = null;
                 other.GetComponentInChildren<MeshRenderer>().enabled = false;
                 other.GetComponentInChildren<Light>().enabled = false;
             }
         }
             
+    }
+
+    private void EnemyRaycast(GameObject enemy)
+    {
+        Vector3 rayDirection = enemy.transform.position - transform.position;
+        RaycastHit hit;
+        Physics.Raycast(transform.position, rayDirection, out hit, rayDistance);
+        Debug.Log(hit);
     }
 }

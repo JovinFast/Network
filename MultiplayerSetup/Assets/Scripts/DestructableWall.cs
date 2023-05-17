@@ -9,19 +9,18 @@ public class DestructableWall : MonoBehaviour
 {
     public GameObject wallPartsPrefab;
     private GameObject wallPartObject;
+    public Roof roof;
     public float health;
     public float currentHealth;
     public bool isDestroyed;
 
 
-    private Spawner spawner;
-
     // Start is called before the first frame update
     void Start()
     {
+        roof = transform.parent.GetComponentInChildren<Roof>();
         isDestroyed = false;
         currentHealth = health;
-        spawner = GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<Spawner>();
     }
 
     // Update is called once per frame
@@ -42,6 +41,10 @@ public class DestructableWall : MonoBehaviour
         if (currentHealth <= 0.0f && !isDestroyed)
         {
             isDestroyed = true;
+            if (roof != null)
+            {
+                roof.destroyedWalls++;
+            }
             SpawnWallParts();
             Destroy(gameObject);
         }
