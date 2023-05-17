@@ -96,5 +96,10 @@ public class FieldOfView : MonoBehaviour
             enemy.GetComponentInChildren<MeshRenderer>().enabled = true;
             enemy.GetComponentInChildren<Light>().enabled = true;
         }
+        else
+        {
+            enemy.GetComponentInChildren<MeshRenderer>().enabled = true;
+            enemy.GetComponentInChildren<Light>().enabled = true;
+        }
     }
 }
