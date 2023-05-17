@@ -44,18 +44,21 @@ public class FieldOfView : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        
         if (!avatar.IsMe) return;
-            Debug.Log(other.gameObject.name);
+            //Debug.Log(other.gameObject.name);
+
         if(other.CompareTag("Player"))
         {
             Debug.Log("Finding playermesh");
             if (!other.GetComponent<Alteruna.Avatar>().IsMe)
             {
+                Debug.Log("Enter Trigger");
                 isInRange = true;
                 enemyObject = other.gameObject;
 
-                other.GetComponentInChildren<MeshRenderer>().enabled = true;
-                other.GetComponentInChildren<Light>().enabled = true;
+                //other.GetComponentInChildren<MeshRenderer>().enabled = true;
+                //other.GetComponentInChildren<Light>().enabled = true;
             }
 
         }
@@ -69,6 +72,7 @@ public class FieldOfView : MonoBehaviour
         {
             if(!other.GetComponent<Alteruna.Avatar>().IsMe)
             {
+                Debug.Log("Exit Trigger");
                 isInRange = false;
                 enemyObject = null;
                 other.GetComponentInChildren<MeshRenderer>().enabled = false;
@@ -80,9 +84,17 @@ public class FieldOfView : MonoBehaviour
 
     private void EnemyRaycast(GameObject enemy)
     {
+        Debug.Log("is raycasting");
         Vector3 rayDirection = enemy.transform.position - transform.position;
         RaycastHit hit;
         Physics.Raycast(transform.position, rayDirection, out hit, rayDistance);
-        Debug.Log(hit);
+        Debug.Log(hit.collider.gameObject.name);
+        Debug.DrawRay(transform.position, rayDirection, Color.magenta);
+        if (hit.collider.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Hitting Player");
+            enemy.GetComponentInChildren<MeshRenderer>().enabled = true;
+            enemy.GetComponentInChildren<Light>().enabled = true;
+        }
     }
 }

@@ -559,6 +559,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: multiplayerGaze
       objectReference: {fileID: 0}
+    - target: {fileID: 4884051022047864926, guid: 1126744fba031894ab300987e6e9adc7, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5227678798639248100, guid: 1126744fba031894ab300987e6e9adc7, type: 3}
       propertyPath: m_RootOrder
       value: 2
