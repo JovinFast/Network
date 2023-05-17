@@ -8,7 +8,7 @@ public class HealthPickUp : AttributesSync
     int healthAmount = 25;
    
     [SerializeField] AudioClip healthSound;
-
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,10 +22,12 @@ public class HealthPickUp : AttributesSync
                     if(other.GetComponent<Health>().currentHealth < 100)
                     {
                         other.GetComponent<Health>().currentHealth += healthAmount;
+                        other.GetComponent<DisplayHealth>().UpdateHealth();
                     }
                     else if (other.GetComponent<Health>().currentHealth > 100)
                     {
                         other.GetComponent<Health>().currentHealth = 100;
+                        other.GetComponent<DisplayHealth>().UpdateHealth();
                     }
                 }
             }
