@@ -75,7 +75,7 @@ public class Health : AttributesSync
 
     private void SpawnPowerUp()
     {
-        int randomIndex = Random.Range(2, 4);
+        int randomIndex = Random.Range(1, 3);
         spawner.Spawn(randomIndex, deathLocation, transform.rotation);
 
     }
