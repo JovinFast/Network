@@ -13,10 +13,10 @@ public class TurnOnOffWindSound : MonoBehaviour
 
    public void TurnUpWind()
     {
-        aS.volume = 1;
+        aS.volume = 0.5f;
     }
     public void TurnDownWind()
     {
-        aS.volume = 0.5f;
+        aS.volume = 0.25f;
     }
 }
