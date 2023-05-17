@@ -25,10 +25,11 @@ public class ZombieController : AttributesSync
     {
         if (isPursuing && targetPlayer != null)
         {
-            InvokeRemoteMethod(nameof(MoveTowardsPlayer), UserId.AllInclusive);
+            MoveTowardsPlayer();
+            //InvokeRemoteMethod(nameof(MoveTowardsPlayer), UserId.AllInclusive);
         }
     }
-    [SynchronizableMethod]
+   // [SynchronizableMethod]
     private void MoveTowardsPlayer()
     {
 
@@ -38,7 +39,7 @@ public class ZombieController : AttributesSync
             zombieRigidbody.velocity = Vector3.zero;
             return;
         }
-        if (!avatar.IsMe) return;
+        
             // Calculate the direction towards the player
             Vector3 direction = targetPlayer.transform.position - transform.position;
             direction.y = 0; // Ignore vertical movement
@@ -69,7 +70,8 @@ public class ZombieController : AttributesSync
             if (targetPlayer == null || distanceToPlayer < Vector3.Distance(transform.position, targetPlayer.transform.position))
             {
                 if (avatar.IsMe) aS.Play();
-                targetPlayer = playerTransform;
+                //targetPlayer = playerTransform;
+                SetPlayerTarget(playerTransform);
                 isPursuing = true; // Start pursuing the target
             }
         }
@@ -83,5 +85,10 @@ public class ZombieController : AttributesSync
         isPursuing = false; // Stop pursuing the target
         targetPlayer = null; // Reset the target player reference
         avatar = null;
+    }
+    //[SynchronizableMethod]
+    private void SetPlayerTarget(GameObject other)
+    {
+        targetPlayer = other;
     }
 }
