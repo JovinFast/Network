@@ -12,6 +12,7 @@ public class ZombieDealDamage : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            avatar = collision.gameObject.GetComponent<Alteruna.Avatar>();
             if (!avatar.IsMe) return;
             if (canDealDamage)
             {

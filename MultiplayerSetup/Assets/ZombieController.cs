@@ -25,13 +25,16 @@ public class ZombieController : AttributesSync
     {
         if (isPursuing && targetPlayer != null)
         {
+            //MoveTowardsPlayer();
             InvokeRemoteMethod(nameof(MoveTowardsPlayer), UserId.AllInclusive);
         }
     }
-    [SynchronizableMethod]
+   [SynchronizableMethod]
     private void MoveTowardsPlayer()
     {
-        if (!ZombieDamageScript.canDealDamage)
+
+        if (targetPlayer == null) return;
+            if (!ZombieDamageScript.canDealDamage)
         {
             zombieRigidbody.velocity = Vector3.zero;
             return;
@@ -52,12 +55,11 @@ public class ZombieController : AttributesSync
 
         
     }
-
+    [SynchronizableMethod]
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            avatar = other.GetComponent<Alteruna.Avatar>();
             isPlayerInRange = true;
 
             // Check if the new player is closer than the current target
@@ -66,14 +68,15 @@ public class ZombieController : AttributesSync
 
             if (targetPlayer == null || distanceToPlayer < Vector3.Distance(transform.position, targetPlayer.transform.position))
             {
+                avatar = other.GetComponent<Alteruna.Avatar>();
                 if (avatar.IsMe) aS.Play();
-                targetPlayer = playerTransform;
+                //targetPlayer = playerTransform;
+                SetPlayerTarget(playerTransform);
                 isPursuing = true; // Start pursuing the target
             }
         }
     }
-
-
+ 
 
     public void ResetTarget()
     {
@@ -81,5 +84,10 @@ public class ZombieController : AttributesSync
         isPursuing = false; // Stop pursuing the target
         targetPlayer = null; // Reset the target player reference
         avatar = null;
+    }
+    [SynchronizableMethod]
+    private void SetPlayerTarget(GameObject other)
+    {      
+            targetPlayer = other;
     }
 }
