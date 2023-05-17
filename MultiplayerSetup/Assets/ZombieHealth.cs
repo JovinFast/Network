@@ -6,7 +6,7 @@ using Alteruna;
 public class ZombieHealth : AttributesSync
 {
 
-    float health;
+    [SynchronizableField]float health;
     private void Start()
     {
         health = 50;
@@ -21,11 +21,12 @@ public class ZombieHealth : AttributesSync
 
         if (health <= 0)
         {
-            InvokeRemoteMethod(nameof(DestroyZombie), UserId.AllInclusive);
+            //InvokeRemoteMethod(nameof(DestroyZombie), UserId.AllInclusive);
+            Destroy(gameObject);
         }
     }
 
-    [SynchronizableMethod]
+    //[SynchronizableMethod]
     private void DestroyZombie()
     {
         Destroy(gameObject);
