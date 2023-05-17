@@ -130,7 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallPartsPrefab: {fileID: 7457537544607900867, guid: 7caa73f914781cc4698683f5f6c2e6d1, type: 3}
   roof: {fileID: 0}
-  health: 2
+  health: 50
   currentHealth: 0
   isDestroyed: 0
 --- !u!114 &3713200747037301092
