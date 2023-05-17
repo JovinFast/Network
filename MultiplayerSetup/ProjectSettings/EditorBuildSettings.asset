@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Jovin.1.unity
+    guid: 1e13c6d7e5fbdd94e847e2842b02772c
   m_configObjects: {}
