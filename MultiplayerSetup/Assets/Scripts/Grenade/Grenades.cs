@@ -14,8 +14,6 @@ public class Grenades : MonoBehaviour
 
     public float chargeUp;
     public float maxCharge;
-    private float reloadSpeed = 2;
-    public float reloadSpeedStart;
 
 
     // Start is called before the first frame update
@@ -23,8 +21,6 @@ public class Grenades : MonoBehaviour
     {
         spawner = GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<Spawner>();
         avatar = GetComponent<Alteruna.Avatar>();
-        reloadSpeedStart = reloadSpeed;
-        reloadSpeed = 0;
     }
 
     // Update is called once per frame
@@ -32,27 +28,18 @@ public class Grenades : MonoBehaviour
     {
         if (!avatar.IsMe)
             return;
-        reloadSpeed -= decreaseAmount * Time.deltaTime;
-        if (reloadSpeed > 0) return;
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButton(1))
         {
-            spawner.Spawn(1, pivotPoint.transform.position, pivotPoint.transform.rotation);
-            reloadSpeed = reloadSpeedStart;
+            while (chargeUp < maxCharge)
+            {
+                chargeUp += Time.deltaTime;
+            }
+            if (Input.GetMouseButtonUp(1) && chargeUp > 0)
+            {
+                spawner.Spawn("Grenade", pivotPoint.transform.position, pivotPoint.transform.rotation);
+                chargeUp = 0;
+            }
             //Instantiate(bulletPrefab, pivotPoint.transform.position, pivotPoint.transform.rotation);
         }
-    }
-
-    public void DecreaseReloadSpeed()
-    {
-        if (reloadSpeedStart > 0)
-        {
-            reloadSpeedStart -= 0.3f;
-        }
-    }
-
-    public void ResetFireRate()
-    {
-        reloadSpeedStart = 2;
-        reloadSpeed = 2;
     }
 }
