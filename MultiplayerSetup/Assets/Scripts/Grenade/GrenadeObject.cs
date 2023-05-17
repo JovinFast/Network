@@ -17,15 +17,12 @@ public class GrenadeObject : MonoBehaviour
         spawner = GameObject.FindGameObjectWithTag("NetworkManager").GetComponent<Spawner>();
         rb = GetComponent<RigidbodySynchronizable>();
         rb.AddForce(transform.forward * grenadeSpeed, ForceMode.Impulse);
-        Destroy(gameObject, 3);
+        Invoke(nameof(Explode), 2);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    void Explode()
     {
-        if (collision.gameObject != GameObject.FindGameObjectWithTag("Player"))
-        {
-            spawner.Spawn("GrenadeExplosion", transform.position);
-            Destroy(gameObject);
-        }
+        spawner.Spawn("GrenadeExplosion", transform.position);
+        Destroy(gameObject);
     }
 }
