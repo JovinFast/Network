@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 1716801935234158399}
   - component: {fileID: 8134142304888021007}
   - component: {fileID: 6916250550194025734}
-  - component: {fileID: 4915175338071446053}
+  - component: {fileID: 6146221981178902736}
   m_Layer: 0
   m_Name: ZombieParent
   m_TagString: Untagged
@@ -582,7 +582,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.0649709, z: 0.75557053}
   m_Center: {x: -7.016221e-11, y: 0.03248477, z: -0.122214735}
---- !u!114 &4915175338071446053
+--- !u!114 &6146221981178902736
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -595,7 +595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 0}
-  _uidString: 884c709e-e084-48f4-bef8-104bba09cfe2
+  _uidString: 0bbb1fdd-5337-4aeb-98a2-c07c14e1a32b
   BucketBehaviors:
   - Name: Min
     NetLOD: 0
