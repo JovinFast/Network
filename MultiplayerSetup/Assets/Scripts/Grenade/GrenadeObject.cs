@@ -25,6 +25,7 @@ public class GrenadeObject : MonoBehaviour
         if (collision.gameObject != GameObject.FindGameObjectWithTag("Player"))
         {
             spawner.Spawn("GrenadeExplosion", transform.position);
+            Destroy(gameObject);
         }
     }
 }

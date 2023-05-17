@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: -8511665000372208580}
   - component: {fileID: 1332923090477545273}
   - component: {fileID: 6058281176245293430}
+  - component: {fileID: 3663935110471864113}
   m_Layer: 0
   m_Name: Grenade
-  m_TagString: Bullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,6 +149,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.16003922
   m_Center: {x: 0, y: -0.0046925247, z: 0}
+--- !u!114 &3663935110471864113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6740034599695580548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e601a5b6faf76d46a37eea090fdc5c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grenadeSpeed: 3
+  damage: 20
 --- !u!1 &6740034600101655012
 GameObject:
   m_ObjectHideFlags: 0

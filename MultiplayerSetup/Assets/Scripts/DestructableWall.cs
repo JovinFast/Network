@@ -38,6 +38,11 @@ public class DestructableWall : MonoBehaviour
             currentHealth -= collision.gameObject.GetComponent<Bullet>().damage;
         }
 
+        if (collision.gameObject.CompareTag("Explosion"))
+        {
+            currentHealth -= collision.gameObject.GetComponent<GrenadeExplosion>().explosionDamage;
+        }
+
         if (currentHealth <= 0.0f && !isDestroyed)
         {
             isDestroyed = true;

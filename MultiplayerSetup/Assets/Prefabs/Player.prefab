@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: -7344765321482340065}
   - component: {fileID: -3139458307097861836}
   - component: {fileID: 5786392532934520700}
+  - component: {fileID: 6956922686381700144}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -374,6 +375,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.4789708, y: 1.6243588, z: 1.5777831}
   m_Center: {x: 0.050807595, y: -0.016008794, z: 0.025443077}
+--- !u!114 &6956922686381700144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2997990256602590665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a0583140a971e4498430b216f482cd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pivotPoint: {fileID: 8698758950629873345}
+  grenadePrefab: {fileID: 6740034599695580548, guid: 36fbab25a9cea1a4da5b285a163ab9b0, type: 3}
+  avatar: {fileID: 0}
+  decreaseAmount: 0
+  chargeUp: 0
+  maxCharge: 3
 --- !u!1 &5272377769081351664
 GameObject:
   m_ObjectHideFlags: 0
