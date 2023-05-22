@@ -17,9 +17,9 @@ public class DestructionSetup : MonoBehaviour
         DestroyAfterTime();
         foreach(Transform part in transform)
         {
-            part.AddComponent<RigidbodySynchronizable>();
-            part.AddComponent<Alteruna.Avatar>();
-            //part.AddComponent<Rigidbody>();
+            //part.AddComponent<RigidbodySynchronizable>();
+            //part.AddComponent<Alteruna.Avatar>();
+            part.AddComponent<Rigidbody>();
             //part.AddComponent<MeshCollider>();
             //part.GetComponent<MeshCollider>().convex = true;
         }
