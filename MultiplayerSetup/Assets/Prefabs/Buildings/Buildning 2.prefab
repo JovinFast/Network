@@ -200,7 +200,8 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3713200747037301092, guid: 97ca18269357b014f9b83607c7fc9217, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 97ca18269357b014f9b83607c7fc9217, type: 3}
 --- !u!4 &781030705133895379 stripped
 Transform:
@@ -282,7 +283,8 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3713200747037301092, guid: 97ca18269357b014f9b83607c7fc9217, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 97ca18269357b014f9b83607c7fc9217, type: 3}
 --- !u!4 &3922839803166637899 stripped
 Transform:
@@ -364,7 +366,8 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3713200747037301092, guid: 97ca18269357b014f9b83607c7fc9217, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 97ca18269357b014f9b83607c7fc9217, type: 3}
 --- !u!4 &2310379340150784420 stripped
 Transform:
@@ -446,7 +449,8 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3713200747037301092, guid: 97ca18269357b014f9b83607c7fc9217, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 97ca18269357b014f9b83607c7fc9217, type: 3}
 --- !u!4 &3045622486292100770 stripped
 Transform:
@@ -528,7 +532,8 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3713200747037301092, guid: 97ca18269357b014f9b83607c7fc9217, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 97ca18269357b014f9b83607c7fc9217, type: 3}
 --- !u!4 &6135343599352750210 stripped
 Transform:
@@ -610,7 +615,8 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3713200747037301092, guid: 97ca18269357b014f9b83607c7fc9217, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 97ca18269357b014f9b83607c7fc9217, type: 3}
 --- !u!4 &6433433548375547194 stripped
 Transform:
@@ -692,7 +698,8 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3713200747037301092, guid: 97ca18269357b014f9b83607c7fc9217, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 97ca18269357b014f9b83607c7fc9217, type: 3}
 --- !u!4 &4627976309679378869 stripped
 Transform:
@@ -774,7 +781,8 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3713200747037301092, guid: 97ca18269357b014f9b83607c7fc9217, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 97ca18269357b014f9b83607c7fc9217, type: 3}
 --- !u!4 &9027036872142477702 stripped
 Transform:
@@ -856,7 +864,8 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3713200747037301092, guid: 97ca18269357b014f9b83607c7fc9217, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 97ca18269357b014f9b83607c7fc9217, type: 3}
 --- !u!4 &7362768535828169927 stripped
 Transform:

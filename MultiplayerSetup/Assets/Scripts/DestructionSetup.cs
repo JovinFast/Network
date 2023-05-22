@@ -20,8 +20,8 @@ public class DestructionSetup : MonoBehaviour
             //part.AddComponent<RigidbodySynchronizable>();
             //part.AddComponent<Alteruna.Avatar>();
             part.AddComponent<Rigidbody>();
-            //part.AddComponent<MeshCollider>();
-            //part.GetComponent<MeshCollider>().convex = true;
+            part.AddComponent<MeshCollider>();
+            part.GetComponent<MeshCollider>().convex = true;
         }
 
         foreach (Transform part in transform)
